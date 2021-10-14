@@ -1,7 +1,8 @@
 <?php
-	session_start();
 
 	require 'db.inc.php';
+    require 'menu.inc.php';
+    require 'functions.inc.php';
 
     if(!empty($_POST['nwUser']) or !empty($_POST['nwPass'])){
         $sqlGetUser ="SELECT id, nev, jelszo FROM `5/13ice` WHERE felhasznalonev = '".$_SESSION["user"]."'";
@@ -38,10 +39,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php echo '<p>Szia '.$_SESSION["nev"].'!';?>
     <form action="chPass.php" method="post">
-        Új Felhasználónév: <input type="text" maxlength="100" name="nwUser"><br>
-        Új jelszó: <input type="password" name="nwPass">
+        <label for="nwUser">Új Felhasználónév:</label><input type="text" maxlength="100" name="nwUser"><br>
+        <label for="nwPass">Új jelszó:</label><input type="password" name="nwPass">
         <br>
         <br>
         <input type="submit">
