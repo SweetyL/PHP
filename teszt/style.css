@@ -1,0 +1,31 @@
+table {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: "Roboto Mono", monospace;
+	font-weight: bold;
+}
+td {
+	border: 1px dashed black;
+	padding: 25px;
+	width: 128px;
+	height: 32px;
+}
+th{
+	border: 1px solid black;
+}
+.missing {
+	background-color: darkgray;
+}
+#tanar{
+	background-color: beige;
+}
+#me{
+	background-color: lavender;
+}
+.error{
+	color: red;
+}
+input{
+	border-radius: 5px;
+}
