@@ -1,11 +1,4 @@
-<?php
-
-if(!empty($_GET['logout'])) {
-	session_unset();
-}
-
-?>
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="hu">
 <head>
 	<meta charset="utf-8">

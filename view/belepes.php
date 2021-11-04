@@ -21,7 +21,7 @@
 						else echo "<h2>Belépés</h2>";
 
 						?>
-						<form action="belepes.php" method="post">
+						<form action="index.php?page=felhasznalo" method="post">
 							Felhasználó:<br><input type="text" name="user">
 							<br>
 							Jelszó: <br><input type="password" name="pw">

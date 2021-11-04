@@ -15,7 +15,7 @@ if(isset($_POST['user']) and isset($_POST['pw'])) {
 				if(md5($_POST['pw']) == $tanulo->get_jelszo()) {
 					$_SESSION["id"] = $row['id'];
 					$_SESSION["nev"] = $tanulo->get_nev();
-                    header('Location: ulesrend.php');
+                    header('Location: index.php?page=ulesrend');
                     exit();
 				}
 				else $loginError .= 'Érvénytelen jelszó<br>';
@@ -25,6 +25,6 @@ if(isset($_POST['user']) and isset($_POST['pw'])) {
 	}
 }
 
-if(!empty($_SESSION["id"])) $title = "Kilépés";
 include 'view/belepes.php';
+
 ?>
