@@ -1,12 +1,4 @@
-<?php
-	include 'htmlheader.inc.php';
-?>
-	<body>
-		<?php
-
-		include 'menu.inc.php';
-
-		?>
+<body>
 		<table>
 			<tr>
 				<th colspan="3">
