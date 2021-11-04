@@ -1,6 +1,16 @@
 <?php
-require 'db.inc.php';
-require 'menu.inc.php';
-require 'functions.inc.php';
-echo "Hello PHP";
+
+session_start();
+
+$title = "Főoldal";
+include 'htmlheader.inc.php';
+
 ?>
+<body
+><?php
+
+include 'menu.inc.php';
+
+?>
+        <h1>Hello PHP</h1>
+</body>

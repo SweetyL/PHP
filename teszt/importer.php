@@ -1,24 +1,44 @@
 <?php
-	require 'db.inc.php'; 
 
-    $osztaly = array(
-	array("Kulhanek László","Bakcsányi Dominik","Füstös Lóránt","Orosz Zsolt","Harsányi László",NULL),
-	array("Molnár Gergő","Juhász Levente","Szabó László","Sütő Dániel","Détári Klaudia",NULL),
-	array("Keresztúri Kevin",NULL,NULL,NULL,NULL,NULL),
-	array("Fazekas Miklós",NULL,"Gombos János","Bicsák József",NULL,NULL)
-);
+require 'db.inc.php';
 
-	
-	foreach($osztaly as $oSor => $tomb){
-		foreach($tomb as $oOszlop => $tanulo){
-			$sql = "INSERT INTO `5/13ice` (nev, sor, oszlop) VALUES (' $tanulo ' ,  ($oSor+1) ,  ($oOszlop+1) )";
+?>
+<!doctype html>
+<html lang="hu">
+	<head>
+		<meta charset="utf-8">
+		<Title>Ülésrend import</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+    <body>
+	<?php
+
+	$osztaly = array(
+		array("Kulhanek László István"),
+		array("Molnár Gergő Máté","Bakcsányi Dominik","Füstös Loránt","Orosz Zsolt","Harsányi László Ferenc",NULL),
+		array("Kereszturi Kevin","Juhász Levente","Szabó László","Sütő Dániel","Détári Klaudia",NULL),
+		array("Fazekas Miklós Adrián",NULL,"Gombos János","Bicsák József")
+	);
+
+	foreach($osztaly as $sor => $tomb) {
+		foreach($tomb as $oszlop => $tanulo) {
+
+			$sql = "INSERT INTO `ulesrend` ( `nev`, `sor`, `oszlop`) VALUES ( '$tanulo', $sor + 1, $oszlop + 1);";
 
 			if ($conn->query($sql) === TRUE) {
-			echo "New record created successfully";
+				echo "$tanulo beszúrásra került. ";
 			} else {
-			echo "Error: " . $sql . "<br>" . $conn->error;
-			}
-	
+				echo "Error: " . $sql . "<br>" . $conn->error;
+			}			
 		}
 	}
-?>
+
+
+	  
+	  $conn->close();
+
+	?>
+	<body>
+
+	</body>
+</html>
