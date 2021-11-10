@@ -11,18 +11,9 @@ elseif(!empty($_GET['nem_hianyzo'])) {
 	$result = $conn->query($sql);	
 }
 
-$hianyzok = getIds('hianyzok', $conn);
+$hianyzok = $hianyzo->hianyzokListaja($conn);
 
-$adminok = array(); // ebben leszek az adminok id-i felsorolva
-
-$sql = "SELECT id FROM adminok";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	while($row = $result->fetch_assoc()) {
-		$adminok[] = $row['id'];
-	}
-}
+$adminok = $admin->adminokListaja($conn);
 
 $en = 0;
 if(!empty($_SESSION["id"])) $en = $_SESSION["id"];

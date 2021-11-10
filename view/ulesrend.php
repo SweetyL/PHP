@@ -14,6 +14,7 @@
 									<?php
 										if($tanuloIdk){
 											foreach($tanuloIdk as $row) {
+												$tanulo->set_user($row, $conn);
 												if($tanulo->get_nev() and !in_array($row, $hianyzok)) echo '<option value="'.$row.'">'.$tanulo->get_nev().'</option>';
 											}
 										}

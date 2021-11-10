@@ -4,7 +4,11 @@ session_start();
 
 require 'includes/db.inc.php';
 require 'model/Ulesrend.php';
+require 'model/Admin.php';
+require 'model/Hianyzo.php';
 $tanulo = new Ulesrend;
+$admin = new Admin;
+$hianyzo = new Hianyzo;
 require 'includes/functions.inc.php';
 
 $page = 'index';

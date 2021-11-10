@@ -26,7 +26,7 @@
 							<br>
 							Jelszó: <br><input type="password" name="pw">
 							<br>
-						<input type="submit">
+						<input type="submit" value="Belépés">
 						</form>
 						<?php						
 					}
