@@ -8,7 +8,7 @@ class Hianyzo extends Kijeloltfelhasznalo {
         $this->tablaNev = 'hianyzok';
     }
 
-    function remove_id($id){
+    function remove_id($id,$conn){
         $sql = "DELETE FROM hianyzok WHERE id =$id";
         $result = $conn->query($sql);
     }

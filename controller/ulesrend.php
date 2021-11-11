@@ -6,7 +6,7 @@ if(!empty($_POST["hianyzo_id"])) {
 	$hianyzo->set_id($_POST["hianyzo_id"],$conn);
 }
 elseif(!empty($_GET['nem_hianyzo'])) {
-	$hianyzo->remove_id($_GET['nem_hianyzo']);	
+	$hianyzo->remove_id($_GET['nem_hianyzo'],$conn);	
 }
 
 $hianyzok = $hianyzo->lista($conn);
