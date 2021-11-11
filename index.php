@@ -8,7 +8,6 @@ require 'model/Admin.php';
 require 'model/Hianyzo.php';
 $tanulo = new Ulesrend;
 $admin = new Admin;
-require 'includes/functions.inc.php';
 
 $page = 'index';
 
