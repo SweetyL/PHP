@@ -6,8 +6,7 @@ if(!empty($_POST["hianyzo_id"])) {
 	$hianyzo->set_id($_POST["hianyzo_id"],$conn);
 }
 elseif(!empty($_GET['nem_hianyzo'])) {
-	$sql = "DELETE FROM hianyzok WHERE id =".$_GET['nem_hianyzo'];
-	$result = $conn->query($sql);	
+	$hianyzo->remove_id($_GET['nem_hianyzo']);	
 }
 
 $hianyzok = $hianyzo->lista($conn);

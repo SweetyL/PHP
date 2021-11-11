@@ -1,5 +1,4 @@
 <?php
-
 class Kijeloltfelhasznalo {
     
     private $id;
