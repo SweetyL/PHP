@@ -7,6 +7,7 @@
       <?php
       
         foreach($menupontok as $key => $value) {
+          if(empty($_SESSION["id"]) and $key=="chPass") continue;
             $active = '';
             if($_SERVER['REQUEST_URI'] == '/banki/'.$key) $active = ' active';
 

@@ -1,4 +1,4 @@
-<body>
+
 		<table>
 			<tr>
 				<th colspan="3">
@@ -64,5 +64,3 @@
 
 				?>
 		</table>
-	</body>
-</html>

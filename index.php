@@ -38,7 +38,8 @@ if(isset($_REQUEST['page'])){
 $menupontok = array(
         'index' => "Főoldal", 
         'ulesrend' => "Ülésrend", 
-        'felhasznalo' => $szoveg
+        'felhasznalo' => $szoveg,
+        'chPass' => "Beállítások"
 );
 
 $title = $menupontok[$page];
