@@ -1,8 +1,5 @@
 <?php
-
-require 'includes/db.inc.php';
-require 'Kijeloltfelhasznalo.php';
-
+require_once 'Kijeloltfelhasznalo.php';
 class Admin extends Kijeloltfelhasznalo{
 
     function __construct() {

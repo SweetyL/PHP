@@ -1,17 +1,16 @@
 <?php
 
 // form feldolgozása
-
+$hianyzo = new Hianyzo;
 if(!empty($_POST["hianyzo_id"])) {
-	$sql = "INSERT INTO hianyzok VALUES(".$_POST["hianyzo_id"].")";
-	$result = $conn->query($sql);
+	$hianyzo->set_id($_POST["hianyzo_id"],$conn);
 }
 elseif(!empty($_GET['nem_hianyzo'])) {
 	$sql = "DELETE FROM hianyzok WHERE id =".$_GET['nem_hianyzo'];
 	$result = $conn->query($sql);	
 }
 
-$hianyzok = $hianyzo->hianyzokListaja($conn);
+$hianyzok = $hianyzo->lista($conn);
 
 $adminok = $admin->lista($conn);
 
