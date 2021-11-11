@@ -13,7 +13,7 @@ elseif(!empty($_GET['nem_hianyzo'])) {
 
 $hianyzok = $hianyzo->hianyzokListaja($conn);
 
-$adminok = $admin->adminokListaja($conn);
+$adminok = $admin->lista($conn);
 
 $en = 0;
 if(!empty($_SESSION["id"])) $en = $_SESSION["id"];
