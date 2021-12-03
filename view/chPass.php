@@ -24,6 +24,35 @@ if($errors) {
             <input type="file" name="fileToUpload" id="fileToUpload" multiple>
             <input type="submit" value="Upload Image" name="submit">
             </form>
+            <br>
+            <?php
+				
+				if(!empty($_SESSION["id"])) {
+					if(in_array($_SESSION["id"], $adminok)) {
+						?>
+                        <p>Profil feltöltés bárkinek</p>
+						<form action="index.php?page=chPass" method="post" enctype="multipart/form-data">
+						Hiányzó: 	<select name="selUser">
+									<?php
+
+									if ($tanuloIdk) {
+										foreach($tanuloIdk as $row) {
+											$tanulo->set_user($row, $conn);
+											if($tanulo->get_nev()) echo '<option value="'.$row.'">'.$tanulo->get_nev().'</option>';
+										}
+									}
+									?>
+										
+									</select>
+							<br>
+                        <label for="fileToUpload">Töltsön fel egy profil képet!</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+                        <input type="submit" value="Upload Image" name="submit">
+						</form>						
+						<?php
+					}
+				}
+				?>
         </th>
 	</tr>
 </table>

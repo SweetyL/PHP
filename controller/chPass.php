@@ -1,12 +1,35 @@
 <?php
+require 'model/Admin.php';
+$tanuloIdk = $tanulo->tanulokListaja($conn);
 $errors = array();
+$admin = new Admin();
+$adminok = $admin->lista($conn);
 //kép feltöltés
 if(isset($_FILES["fileToUpload"])) {
+    if(isset($_POST["selUser"])){
+        $sql = "SELECT id, nev, sor, oszlop, jelszo, felhasznalonev FROM ulesrend  WHERE id = '".$_POST["selUser"]."'";
+        $result = $conn->query($sql);
+        if ($result) {
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $id = $row["id"];
+            }
+        } 
+    }else{
+        $id = $_SESSION["id"];
+    }
+    if(file_exists($id.".jpg")){
+        unlink("uploads/".$id.".jpg");
+    }else if(file_exists($id.".jpeg")){
+        unlink("uploads/".$id.".jpeg");
+    }else if(file_exists($id.".png")){
+        unlink("uploads/".$id.".png");
+    }
     $target_dir = "uploads/";
     $allowed_filetypes = array('image/png', 'image/jpg','image/jpeg');
     $name = basename($_FILES["fileToUpload"]["name"]);
     $extension = substr(strrchr($name, '.'), 1);
-    $target_file = $target_dir . $_SESSION["id"] . "." . $extension;
+    $target_file = $target_dir . $id . "." . $extension;
   
       if ($_FILES["fileToUpload"]["size"] > 102400) {
         $errors[$key][] = "A $name túl nagy méretű, 100KB-nál nem lehet nagyobb";
