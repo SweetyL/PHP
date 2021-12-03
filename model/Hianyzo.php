@@ -1,16 +1,20 @@
 <?php
 
-require_once 'Kijeloltfelhasznalo.php';
+require_once 'Kijeloltfelhasznalok.php';
 
-class Hianyzo extends Kijeloltfelhasznalo {
-
+class Hianyzo extends Kijeloltfelhasznalok {
+    
     function __construct() {
         $this->tablaNev = 'hianyzok';
     }
 
-    function remove_id($id,$conn){
-        $sql = "DELETE FROM hianyzok WHERE id =$id";
-        $result = $conn->query($sql);
+    /**
+     * 
+     */
+    public function remove_id($id, $conn) {
+        $sql = "DELETE FROM hianyzok WHERE id = $id";
+        $result = $conn->query($sql);	
     }
 }
+
 ?>

@@ -1,9 +1,12 @@
 <?php
-require_once 'Kijeloltfelhasznalo.php';
-class Admin extends Kijeloltfelhasznalo{
 
+require_once 'Kijeloltfelhasznalok.php';
+
+class Admin extends Kijeloltfelhasznalok {
+    
     function __construct() {
         $this->tablaNev = 'adminok';
     }
 }
+
 ?>

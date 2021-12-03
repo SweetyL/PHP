@@ -1,4 +1,4 @@
-<body>
+
 		<table>
 			<tr>
 				<th colspan="3">
@@ -26,7 +26,7 @@
 							<br>
 							Jelszó: <br><input type="password" name="pw">
 							<br>
-						<input type="submit" value="Belépés">
+						<input type="submit">
 						</form>
 						<?php						
 					}
@@ -34,5 +34,3 @@
 				</th>
 			</tr>
 		</table>
-	</body>
-</html>
