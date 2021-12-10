@@ -11,8 +11,8 @@
       
         foreach($menupontok as $key => $value) {
             $active = '';
-            if($_SERVER['REQUEST_URI'] == '/teszt/'.$key) $active = ' active';
-
+            if($_SERVER['REQUEST_URI'] == '/banki/index.php?page='.$key) $active = ' active';
+            
             if($key == 'felhasznalo') $key.='&action='.$action;
             if($key == 'chPass' && empty($_SESSION["id"])){
               continue;
